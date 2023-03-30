@@ -17,6 +17,7 @@ const ExpenseForm = ({ onSaveExpenseData, setAddExpense }) => {
       amount,
       date: new Date(date),
     };
+    if (!title && !amount && !date) return;
 
     onSaveExpenseData(expenseData);
     console.log(expenseData);
