@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = ({ onSaveExpenseData }) => {
+const ExpenseForm = ({ onSaveExpenseData, setAddExpense }) => {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -19,10 +19,12 @@ const ExpenseForm = ({ onSaveExpenseData }) => {
     };
 
     onSaveExpenseData(expenseData);
+    console.log(expenseData);
 
     setTitle("");
     setAmount("");
     setDate("");
+    setAddExpense(false);
   };
   return (
     <form onSubmit={handleSubmit} noValidate>
